@@ -8,3 +8,12 @@
     在选择目标的 Xcode 中，点击 Build Phases 并打开 Bundle React Native code and image
     NODE_BINARY=node node 替换为路径
     FBReactNativeSpec 到 cp 脚本里把find-node 去掉直接复制node 路径
+
+
+# brew install node link 的时候不能把路径添加到path 不然也会导致node路径不对
+    **If you need to have this software first in your PATH run: echo 'export PATH="/usr/local/opt/openssl/bin:$PATH"' >> ~/.bash_profile**
+ 
+    $ echo 'export PATH="/usr/local/opt/node@16/bin:$PATH"' >> ~/.bash_profile
+    $ source ~/.bash_profile
+    
+    默认的node 路径 which node       /usr/local/bin/node 路径不太一样
