@@ -17,3 +17,8 @@
     $ source ~/.bash_profile
     
     默认的node 路径 which node       /usr/local/bin/node 路径不太一样
+
+# DeprecatedColorPropType.js this package itself specifies a `main` module field that could not be resolved
+for me none of the above worked but this did: go to : node_modules\deprecated-react-native-prop-types\DeprecatedColorPropType.js
+find this line :    const normalizeColor = require('@react-native/normalize-color'); 
+and change it to this:      const normalizeColor = require('@react-native/normalize-color/base');
