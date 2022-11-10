@@ -22,3 +22,21 @@
 for me none of the above worked but this did: go to : node_modules\deprecated-react-native-prop-types\DeprecatedColorPropType.js
 find this line :    const normalizeColor = require('@react-native/normalize-color'); 
 and change it to this:      const normalizeColor = require('@react-native/normalize-color/base');
+
+# find DSO to load: libhermes-executor-release.so
+    ```
+    dependencies {
+    // ...
+
+    if (enableHermes) {
++       implementation("com.facebook.react:hermes-engine:+") {
++           exclude group:'com.facebook.fbjni'
++       }
+-       def hermesPath = "../../node_modules/hermes-engine/android/";
+-       debugImplementation files(hermesPath + "hermes-debug.aar")
+-       releaseImplementation files(hermesPath + "hermes-release.aar")
+    } else {
+        implementation jscFlavor
+    }
+    }
+```
